@@ -4,19 +4,25 @@ ENDIF()
 
 find_package(IWear REQUIRED)
 
-if(NOT DEFINED ENV{FreeEMG_SDK_DIR})
-    message(FATAL_ERROR "Cannot find environment variable FeeEMG_SDK_DIR")
+if(NOT DEFINED FREEEMG_SDK_DIR)
+    if(DEFINED ENV{FREEEMG_SDK_DIR})
+        set(FREEEMG_SDK_DIR $ENV{FREEEMG_SDK_DIR})
+    else()
+        message(FATAL_ERROR "Cannot find FREEEMG_SDK_DIR!")
+    endif()
 endif()
 
 # Register DLLs
-GET_FILENAME_COMPONENT(DOT_NET_INSTALL_PATH "[HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\NET Framework Setup\\NDP\\v4\\Full;InstallPath]" ABSOLUTE)
-message(WARNING "DOT_NET_INSTALL_PATH ${DOT_NET_INSTALL_PATH}")
+get_filename_component(DOT_NET_INSTALL_PATH "[HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\NET Framework Setup\\NDP\\v4\\Full;InstallPath]" ABSOLUTE)
+if(DOT_NET_INSTALL_PATH STREQUAL "/registry")
+    message(FATAL_ERROR "Unable to locate .NET Framework v4 installation!")
+endif()
 cmake_path(CONVERT ${DOT_NET_INSTALL_PATH} TO_NATIVE_PATH_LIST DOT_NET_INSTALL_NATIVE_PATH)
 cmake_path(CONVERT ${CMAKE_CURRENT_SOURCE_DIR} TO_NATIVE_PATH_LIST CMAKE_CURRENT_SOURCE_DIR_NATIVE)
 
 add_custom_target(
     PreBuild
-    COMMAND cmd /k "${CMAKE_CURRENT_SOURCE_DIR_NATIVE}\\build_scripts\\PreBuild.bat" "$<CONFIG>" "${DOT_NET_INSTALL_NATIVE_PATH}" "$ENV{FreeEMG_SDK_DIR}" "${CMAKE_CURRENT_SOURCE_DIR_NATIVE}" "x64"
+    COMMAND cmd /k "${CMAKE_CURRENT_SOURCE_DIR_NATIVE}\\build_scripts\\PreBuild.bat" "$<CONFIG>" "${DOT_NET_INSTALL_NATIVE_PATH}" "${FREEEMG_SDK_DIR}" "${CMAKE_CURRENT_SOURCE_DIR_NATIVE}" "x64"
 )
 
 # Compile the plugin by default
