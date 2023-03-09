@@ -1,7 +1,7 @@
 <application>
 
     <!-- Generic information-->
-    <name>FreeEmgLog</name>
+    <name>FREEEMG_Log</name>
     <description>Log the EMG signals</description>
     <version>0.0.1</version>
 
