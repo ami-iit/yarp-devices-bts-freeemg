@@ -14,17 +14,17 @@ rem ---- CONFIGURATIONS
 rem ---------------------------------------
 
 set DOT_NET_INSTALL_PATH=%~2
-set FeeEMG_SDK_DIR=%~3
+set FREEEMG_SDK_DIR=%~3
 set Device_DIR=%~4
 set PLATFORM=%~5
 
 echo DOT_NET_INSTALL_PATH %DOT_NET_INSTALL_PATH%
-echo FeeEMG_SDK_DIR %FeeEMG_SDK_DIR%
+echo FREEEMG_SDK_DIR %FREEEMG_SDK_DIR%
 echo Device_DIR %Device_DIR%
 echo PLATFORM %PLATFORM%
 
 set TARGET_ROOT=%PROJECT_ROOT%..
-set IMPORT_ROOT=%FeeEMG_SDK_DIR%\Bin
+set IMPORT_ROOT=%FREEEMG_SDK_DIR%\Bin
 
 set IMPORT_NAME1=bts.biodaq.drivers
 set IMPORT_NAME2=bts.biodaq.core
