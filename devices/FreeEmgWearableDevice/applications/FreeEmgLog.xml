@@ -11,7 +11,7 @@
 
     <module>
         <name>yarprobotinterface</name>
-        <parameters>--config freeEMG.xml --period 0.01 --COM-ports (26)</parameters>
+        <parameters>--config freeemg.xml --period 0.01 --COM-ports (26)</parameters>
     </module>
 
     <module>

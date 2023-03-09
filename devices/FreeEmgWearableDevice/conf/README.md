@@ -20,7 +20,7 @@ List of overridable parameters when launching `yarprobotinterface`:
 To run the configuration:
 
 ```bat
-yarprobotinterface --config freeEMG.xml
+yarprobotinterface --config freeemg.xml
 ```
 
 ### Log or stream analog data

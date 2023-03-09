@@ -2,7 +2,7 @@
 <!DOCTYPE robot PUBLIC "-//YARP//DTD yarprobotinterface 3.0//EN" "http://www.yarp.it/DTD/yarprobotinterfaceV3.0.dtd">
 <robot name="FreeEmgWearableDevice" build="0" portprefix="/FreeEmg">
     <!--iFeelSuit Device-->
-    <device type="free_emg" name="FreeEmgWearableDevice">
+    <device type="freeemg" name="FreeEmgWearableDevice">
         <param extern-name="period" name="period">0.05</param><!--Device update period in seconds-->
         
         <!-- 

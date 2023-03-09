@@ -26,7 +26,7 @@ add_custom_target(
 )
 
 # Compile the plugin by default
-yarp_prepare_plugin(free_emg  TYPE wearable::devices::FreeEmgDevice
+yarp_prepare_plugin(freeemg  TYPE wearable::devices::FreeEmgDevice
                     INCLUDE include/FreeEmgDevice.h
                     CATEGORY device
                     ADVANCED
