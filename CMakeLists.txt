@@ -1,0 +1,51 @@
+# Copyright (C) 2020 Istituto Italiano di Tecnologia (IIT). All rights reserved.
+# This software may be modified and distributed under the terms of the
+# GNU Lesser General Public License v2.1 or any later version.
+
+cmake_minimum_required(VERSION 3.5) #TODO check
+
+set(GLOBAL_PROJECT_VERSION "0.0.1")
+
+project(FreeEmg VERSION ${GLOBAL_PROJECT_VERSION}
+                    LANGUAGES CXX)
+
+set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+include(GNUInstallDirs)
+
+# Export all symbols in Windows
+set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
+
+# Add a postfix to Windows libraries compiled in debug
+if(MSVC)
+    set(CMAKE_DEBUG_POSTFIX "d")
+endif()
+
+# Libraries type
+if(MSVC)
+    option(BUILD_SHARED_LIBS "Build libraries as shared as opposed to static" OFF)
+else()
+    option(BUILD_SHARED_LIBS "Build libraries as shared as opposed to static" ON)
+endif()
+
+# Control where binaries and libraries are placed in the build folder.
+# This simplifies tests running in Windows.
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/${CMAKE_INSTALL_BINDIR}")
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/${CMAKE_INSTALL_LIBDIR}")
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/${CMAKE_INSTALL_LIBDIR}")
+
+# Tweak linker flags in Linux
+if(UNIX AND NOT APPLE)
+    get_filename_component(LINKER_BIN ${CMAKE_LINKER} NAME)
+    if(${LINKER_BIN} STREQUAL "ld")
+        set(CMAKE_SHARED_LINKER_FLAGS "-Wl,--unresolved-symbols=report-all")
+    endif()
+endif()
+
+set(CMAKE_POSITION_INDEPENDENT_CODE ON)
+
+find_package(YARP 3.7.2 QUIET)
+set(YARP_FORCE_DYNAMIC_PLUGINS ON)
+
+add_subdirectory(devices)

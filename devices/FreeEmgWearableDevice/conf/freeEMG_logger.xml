@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE robot PUBLIC "-//YARP//DTD yarprobotinterface 3.0//EN" "http://www.yarp.it/DTD/yarprobotinterfaceV3.0.dtd">
+<robot name="robot-name" build=0 portprefix="/FreeEMG">
+
+    <device type="iwear_remapper" name="FreeEmgRemapper">
+        <param extern-name="wearableDataPorts" name="wearableDataPorts">(/FreeEmg/WearableData/data:o)</param>
+        <param extern-name="useRPC" name="useRPC">false</param>
+    </device>
+
+    <device type="iwear_logger" name="WearableLoggerDevice">
+        <param extern-name="period" name="period">0.01</param><!--Log period in seconds-->
+        <param extern-name="loggerType" name="LoggerType">(matlab)</param>
+        <param name="logAllQuantities">false</param>
+        <param name="logAccelerometers">false</param>
+        <param name="logEMGSensors">true</param>
+        <param name="logForce3DSensors">false</param>
+        <param name="logForceTorque6DSensors">false</param>
+        <param name="logFreeBodyAccelerationSensors">false</param>
+        <param name="logGyroscopes">false</param>
+        <param name="logMagnetometers">false</param>
+        <param name="logOrientationSensors">false</param>
+        <param name="logPoseSensors">false</param>
+        <param name="logPositionSensors">false</param>
+        <param name="logTemperatureSensors">false</param>
+        <param name="logTorque3DSensors">false</param>
+        <param name="logVirtualLinkKinSensors">false</param>
+        <param name="logVirtualJointKinSensors">false</param>
+        <param name="logVirtualSphericalJointKinSensors">false</param>                
+        <param name="saveBufferManagerConfiguration">true</param>
+        <param name="experimentName" extern-name="experiment-name">free_emg_data</param>
+        <!--param name="path"></param-->
+        <param name="n_samples">100000</param>
+        <param name="save_periodically">true</param>
+        <param name="save_period">120.0</param>
+        <param name="data_threshold">300</param>
+        <param name="auto_save">true</param>
+        <action phase="startup" level="5" type="attach">
+            <paramlist name="networks">
+                <elem name="ProducerDeviceWrapperLabel"> FreeEmgRemapper </elem>
+            </paramlist>
+        </action>
+        <action phase="shutdown" level="5" type="detach"/>
+    </device>
+
+</robot>

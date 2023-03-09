@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+    Example configuration file for yarpscope.
+    
+    This assumes that the freeEMG_logger has been launched with
+    "loggerType" paramater set to yarp
+
+    The example shows 3 piled plots for different emg signals 
+-->
+<portscope rows="3" columns="1" carrier="mcast" interval="5">
+    <!-- The color scheme for the graphs is similar to>
+    <matlab plots color order-->
+    <plot
+        sgridx="0"
+        gridy="0"
+        title="Tibialis anterior"
+        size="60"
+        minval="-1"
+        maxval="1"
+        bgcolor="grey">
+        <graph
+            remote="/FreeEmg/emg/r_tib_ant"
+            index="1"
+            color="#EDB022"
+            title="tib_ant"
+            type="lines"
+        />
+    </plot>
+    <plot 
+        gridx="0"
+        gridy="1"
+        title="Gastrocnemius lateralis"
+        size="60"
+        minval="-1"
+        maxval="1"
+        bgcolor="grey">
+        <graph 
+            remote="/FreeEmg/emg/r_gastro_lat"
+            index="1"
+            color="#D95218"
+            title=""
+            type="lines"
+        />
+    </plot>
+    <plot 
+        gridx="0"
+        gridy="2"
+        title="Gastrocnemius medialis"
+        size="60"
+        minval="-1"
+        maxval="1"
+        bgcolor="grey">
+        <graph
+            remote="/FreeEmg/emg/r_gastro_med"
+            index="1"
+            color="#D95218"
+            title=""
+            type="lines"
+        />
+    </plot>
+</portscope>

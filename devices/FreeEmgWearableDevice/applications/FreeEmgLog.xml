@@ -1,0 +1,22 @@
+<application>
+
+    <!-- Generic information-->
+    <name>FreeEmgLog</name>
+    <description>Log the EMG signals</description>
+    <version>0.0.1</version>
+
+    <authors>
+        <author email="riccardo.grieco@hotmail.com"> Riccardo Grieco </author>
+    </authors>
+
+    <module>
+        <name>yarprobotinterface</name>
+        <parameters>--config freeEMG.xml --period 0.01 --COM-ports (26)</parameters>
+    </module>
+
+    <module>
+        <name>yarprobotinterface</name>
+        <parameters>--config freeEMG_logger.xml --loggerType "(matlab)" --period 0.01</parameters>
+    </module>
+
+</application>
