@@ -1,7 +1,7 @@
 <application>
 
     <!-- Generic information-->
-    <name>FreeEmgVisualization</name>
+    <name>FREEEMG_Visualization</name>
     <description>Plot the EMG signals</description>
     <version>0.0.1</version>
 

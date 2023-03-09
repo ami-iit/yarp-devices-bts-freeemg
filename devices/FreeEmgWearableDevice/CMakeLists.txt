@@ -26,30 +26,30 @@ add_custom_target(
 )
 
 # Compile the plugin by default
-yarp_prepare_plugin(freeemg  TYPE wearable::devices::FreeEmgDevice
+yarp_prepare_plugin(freeemg TYPE wearable::devices::FreeEmgDevice
                     INCLUDE include/FreeEmgDevice.h
                     CATEGORY device
                     ADVANCED
                     DEFAULT ON
                     )
 
-yarp_add_plugin(free_emg_device src/FreeEmgDevice.cpp src/BioDAQUtils.cpp
+yarp_add_plugin(freeemg_device src/FreeEmgDevice.cpp src/BioDAQUtils.cpp
                 include/FreeEmgDevice.h)
 
-target_link_libraries(free_emg_device
+target_link_libraries(freeemg_device
                     PUBLIC
                     IWear::IWear YARP::YARP_dev YARP::YARP_os
                     )
 
-target_include_directories(free_emg_device 
+target_include_directories(freeemg_device 
                            PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
                            PRIVATE include_private)
 
 # Run the DLLs registering script before build
-add_dependencies(free_emg_device PreBuild)
+add_dependencies(freeemg_device PreBuild)
 
 # Install the device
-yarp_install(TARGETS free_emg_device
+yarp_install(TARGETS freeemg_device
             COMPONENT runtime
             LIBRARY DESTINATION ${YARP_DYNAMIC_PLUGINS_INSTALL_DIR}
             ARCHIVE DESTINATION ${YARP_STATIC_PLUGINS_INSTALL_DIR}
