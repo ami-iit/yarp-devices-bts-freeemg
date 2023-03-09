@@ -17,11 +17,6 @@ include(GNUInstallDirs)
 # Export all symbols in Windows
 set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
 
-# Add a postfix to Windows libraries compiled in debug
-if(MSVC)
-    set(CMAKE_DEBUG_POSTFIX "d")
-endif()
-
 # Libraries type
 if(MSVC)
     option(BUILD_SHARED_LIBS "Build libraries as shared as opposed to static" OFF)
@@ -34,14 +29,6 @@ endif()
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/${CMAKE_INSTALL_BINDIR}")
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/${CMAKE_INSTALL_LIBDIR}")
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/${CMAKE_INSTALL_LIBDIR}")
-
-# Tweak linker flags in Linux
-if(UNIX AND NOT APPLE)
-    get_filename_component(LINKER_BIN ${CMAKE_LINKER} NAME)
-    if(${LINKER_BIN} STREQUAL "ld")
-        set(CMAKE_SHARED_LINKER_FLAGS "-Wl,--unresolved-symbols=report-all")
-    endif()
-endif()
 
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
