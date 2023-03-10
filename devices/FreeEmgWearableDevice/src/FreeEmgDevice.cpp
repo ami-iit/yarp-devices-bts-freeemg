@@ -670,7 +670,7 @@ bool FreeEmgDevice::close()
 
     // Close the device
     if (!m_pImpl->close()) {
-        yError() << LOG_PREFIX << "Cannot close correctly the sense glove implementation.";
+        yError() << LOG_PREFIX << "Cannot close correctly the deive.";
         return false;
     }
 

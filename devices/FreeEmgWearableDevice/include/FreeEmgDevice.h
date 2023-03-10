@@ -195,4 +195,4 @@ public:
     }
 };
 
-#endif // HAPTIC_GLOVE_H
+#endif // FREE_EMG_DEVICE_H
