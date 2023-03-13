@@ -1,8 +1,4 @@
-# Copyright (C) 2020 Istituto Italiano di Tecnologia (IIT). All rights reserved.
-# This software may be modified and distributed under the terms of the
-# GNU Lesser General Public License v2.1 or any later version.
-
-cmake_minimum_required(VERSION 3.5) #TODO check
+cmake_minimum_required(VERSION 3.5)
 
 set(GLOBAL_PROJECT_VERSION "0.0.1")
 
