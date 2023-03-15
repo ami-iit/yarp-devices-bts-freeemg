@@ -40,6 +40,10 @@ Finally, make the device available for YARP to use it by updating the following 
 
 The device can be open using `yarpdev --device freeemg` (`yarpserver` must be running). See also the `yarprobotinterface` [configuration files](devices/FreeEmgWearableDevice/conf/README.md) for the parameters that must/can be used.
 
+### Applications
+
+There are some default applications that can be run using the device. You can check them out [here](devices/FreeEmgWearableDevice/applications).
+
 Maintainers
 --------------
 This repository is maintained by:
