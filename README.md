@@ -38,7 +38,7 @@ Finally, make the device available for YARP to use it by updating the following 
 
 ### Running the device
 
-The device can be open using `yarpdev --device freeemg`. See also the `yarprobotinterface` [configuration files](devices/FreeEmgWearableDevice/conf/README.md) for the parameters that must/can be used.
+The device can be open using `yarpdev --device freeemg` (`yarpserver` must be running). See also the `yarprobotinterface` [configuration files](devices/FreeEmgWearableDevice/conf/README.md) for the parameters that must/can be used.
 
 Maintainers
 --------------
