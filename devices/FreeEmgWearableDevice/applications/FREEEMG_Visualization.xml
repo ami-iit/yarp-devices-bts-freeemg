@@ -1,0 +1,26 @@
+<application>
+
+    <!-- Generic information-->
+    <name>FREEEMG_Visualization</name>
+    <description>Plot the EMG signals</description>
+    <version>0.0.1</version>
+
+    <authors>
+        <author email="riccardo.grieco@hotmail.com"> Riccardo Grieco </author>
+    </authors>
+
+    <module>
+        <name>yarprobotinterface</name>
+        <parameters>--config freeemg.xml --period 0.01 --COM-ports (26)</parameters>
+    </module>
+
+    <module>
+        <name>yarprobotinterface</name>
+        <parameters>--config freeEMG_logger.xml --loggerType "(yarp)" --period 0.01</parameters>
+    </module>
+
+    <module>
+        <name>yarpscope</name>
+        <parameters>--xml freeEmg_scope.xml</parameters>
+    </module>
+</application>

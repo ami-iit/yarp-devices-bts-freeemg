@@ -1,6 +1,48 @@
 # yarp-devices-bts-freeemg
 YARP wearable device implementation for the BTS FREEEMG system
 
+## Installation (Windows only)
+
+Dependencies:
+- [`YARP`](https://github.com/robotology/yarp)
+- FREEEMG SDK: ask the vendor for the libraries
+
+Starting from the directory where you cloned this repo, follow the steps below to install the device:
+
+>:warning::warning: This operation required Administrator privileges. Open the terminal with right-click -> Run as administrator :warning::warning:
+
+```bat
+:: create the build directory
+mkdir build
+:: enter the directory
+cd build
+:: setup the build
+:: replace <freeemg_sdk_root_directory> with your specific directory. Beware the spaces in the path! Enclose it in ""
+cmake -G"Visual Studio 17 2022" .. -DFREEEMG_SDK_DIR=<freeemg_sdk_root_directory> -DCMAKE_INSTALL_PREFIX="./install"
+:: build and install
+cmake --build . --config Release --target INSTALL
+```
+>:warning: Change the Visual Studio version according to your installed version
+
+>:warning: You can also set the FREEEMG_SDK_DIR environment variable instead of passing it to the cmake command
+
+These will install the device and related files in the subdirectory `build/install`.
+
+Finally, make the device available for YARP to use it by updating the following environment variables:
+
+- `PATH`  
+  Add `<installation-directory>\lib\yarp`
+- `YARP_DATA_DIRS`  
+  Add `<installation-directory>\share\yarp`  
+  Add `<installation-directory>\share\FreeEmg`
+
+### Running the device
+
+The device can be open using `yarpdev --device freeemg` (`yarpserver` must be running). See also the `yarprobotinterface` [configuration files](devices/FreeEmgWearableDevice/conf/README.md) for the parameters that must/can be used.
+
+### Applications
+
+There are some default applications that can be run using the device. You can check them out [here](devices/FreeEmgWearableDevice/applications).
 
 Maintainers
 --------------

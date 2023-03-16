@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE robot PUBLIC "-//YARP//DTD yarprobotinterface 3.0//EN" "http://www.yarp.it/DTD/yarprobotinterfaceV3.0.dtd">
+<robot name="FreeEmgWearableDevice" build="0" portprefix="/FreeEmg">
+    <!--iFeelSuit Device-->
+    <device type="freeemg" name="FreeEmgWearableDevice">
+        <param extern-name="period" name="period">0.05</param><!--Device update period in seconds-->
+        
+        <!-- 
+            Required parameter COM-ports holds the list of COM ports
+            the BMs are connected to.
+        -->
+        <param extern-name="COM-ports" name="COM-ports">(26)</param>
+
+        <!--
+            Required parameter labelToNameGroup associates EMG 
+            probes labels with logical names for the sensors.
+        -->
+        <group name="labelToNameGroup">
+            <param extern-name="labelList" name="labelList">(1 2 3)</param>
+            <param extern-name="sensorNames" name="sensorNames">(r_tib_ant r_gastro_lat r_gastro_med)</param>
+        </group>
+
+        <!--
+            Required parameter useCustomProfile tells whether we want to use a
+            specific set of probes or keep the last one used
+        -->
+        <param extern-name="useCustomProfile" name="useCustomProfile">false</param>
+
+        <!--
+            OPTIONAL parameter profile holds the EMG dictionary, which specifies the
+            set of probe identifiers (the numbers printed on the probe themselves) and the
+            labels associated to them.
+            The parameter is REQUIRED if "useCustomProfile" is set to true
+        -->
+        <group name="profile">
+            <group name="emg1">
+                <param name="label">1</param>
+                <param name="color">blue</param>
+                <param name="identifier">101459</param>
+            </group>
+            <group name="emg2">
+                <param name="label">2</param>
+                <param name="color">blue</param>
+                <param name="identifier">10145A</param>
+            </group>
+            <group name="emg3">
+                <param name="label">3</param>
+                <param name="color">blue</param>
+                <param name="identifier">10145B</param>
+            </group>
+            <group name="emg4">
+                <param name="label">4</param>
+                <param name="color">blue</param>
+                <param name="identifier">10145C</param>
+            </group>
+            <group name="emg5">
+                <param name="label">5</param>
+                <param name="color">blue</param>
+                <param name="identifier">10145D</param>
+            </group>
+            <group name="emg6">
+                <param name="label">6</param>
+                <param name="color">blue</param>
+                <param name="identifier">"10145E"</param>
+            </group>
+            <group name="emg7">
+                <param name="label">7</param>
+                <param name="color">blue</param>
+                <param name="identifier">10145F</param>
+            </group>
+            <group name="emg8">
+                <param name="label">8</param>
+                <param name="color">blue</param>
+                <param name="identifier">101460</param>
+            </group>
+        </group>
+    </device>
+
+    <!-- Stream data as wearable message -->
+    <device type="iwear_wrapper" name="FreeEmgWearableDeviceWrapper">
+        <param extern-name="period" name="period">0.005</param><!--Device update period in seconds-->
+        <param extern-name="dataPortName" name="dataPortName">/FreeEmg/WearableData/data:o</param>
+        <action phase="startup" level="5" type="attach">
+            <paramlist name="networks">
+                <elem name="FreeEmgWearableDeviceWrapperLabel"> FreeEmgWearableDevice </elem>
+            </paramlist>
+        </action>
+        <action phase="shutdown" level="4" type="detach"/>
+    </device>
+
+</robot>
