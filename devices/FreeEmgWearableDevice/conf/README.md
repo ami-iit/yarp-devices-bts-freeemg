@@ -25,7 +25,7 @@ yarprobotinterface --config freeemg.xml
 
 ### Log or stream analog data
 
-The `yarprobotinterface` configuration file [`freeEMG_logger`](freeEMG_logger.xml) allows for two purposes:
+The `yarprobotinterface` configuration file [`freeemg_logger`](freeemg_logger.xml) allows for two purposes:
 
 1. Log the data as a `.mat` file 
 2. Stream the data as analog values
@@ -48,12 +48,12 @@ In streaming mode, the process will create one YARP port per sensor (probe) with
 To run the logger:
 
 ```bat
-yarprobotinterface --config freeEMG_logger.xml
+yarprobotinterface --config freeemg_logger.xml
 ```
 
 ### Visualize EMG signals
 
-The file [`freeEMG_scope`](freeEMG_scope.xml) is a `yarpscope` configuration file for visualizing the EMG signals streamed by the device.
+The file [`freeemg_scope`](freeemg_scope.xml) is a `yarpscope` configuration file for visualizing the EMG signals streamed by the device.
 
 In order to run the device, the values must be streamed in analog ports like the ones provided by the [related configuration file](#log-or-stream-analog-data).
 

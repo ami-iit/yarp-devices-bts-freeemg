@@ -16,11 +16,11 @@
 
     <module>
         <name>yarprobotinterface</name>
-        <parameters>--config freeEMG_logger.xml --loggerType "(yarp)" --period 0.01</parameters>
+        <parameters>--config freeemg_logger.xml --loggerType "(yarp)" --period 0.01</parameters>
     </module>
 
     <module>
         <name>yarpscope</name>
-        <parameters>--xml freeEmg_scope.xml</parameters>
+        <parameters>--xml freeemg_scope.xml</parameters>
     </module>
 </application>

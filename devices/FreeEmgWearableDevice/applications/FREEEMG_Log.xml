@@ -16,7 +16,7 @@
 
     <module>
         <name>yarprobotinterface</name>
-        <parameters>--config freeEMG_logger.xml --loggerType "(matlab)" --period 0.01</parameters>
+        <parameters>--config freeemg_logger.xml --loggerType "(matlab)" --period 0.01</parameters>
     </module>
 
 </application>
