@@ -5,7 +5,9 @@ YARP wearable device implementation for the BTS FREEEMG system
 
 Dependencies:
 - [`YARP`](https://github.com/robotology/yarp)
+- `IWear` from [`wearables`](https://github.com/robotology/wearables)
 - FREEEMG SDK: ask the vendor for the libraries
+- `.Net Framework v4`
 
 Starting from the directory where you cloned this repo, follow the steps below to install the device:
 
