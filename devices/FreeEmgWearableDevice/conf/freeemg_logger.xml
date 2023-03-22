@@ -28,7 +28,7 @@
         <param name="logVirtualSphericalJointKinSensors">false</param>                
         <param name="saveBufferManagerConfiguration">true</param>
         <param name="experimentName" extern-name="experiment-name">free_emg_data</param>
-        <!--param name="path"></param-->
+        <param name="path" extern-name="path">./</param>
         <param name="n_samples">100000</param>
         <param name="save_periodically">true</param>
         <param name="save_period">120.0</param>
