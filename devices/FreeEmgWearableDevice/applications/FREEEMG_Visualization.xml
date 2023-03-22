@@ -11,7 +11,7 @@
 
     <module>
         <name>yarprobotinterface</name>
-        <parameters>--config freeemg_analog.xml --period 0.01 --COM-ports "(26)"</parameters>
+        <parameters>--config freeemg_analog.xml --period 0.01 --COM-ports "(26)" --labelList "(1 2 3)" --sensorNames "(r_tib_ant r_gastro_lat r_gastro_med)"</parameters>
     </module>
 
     <module>
