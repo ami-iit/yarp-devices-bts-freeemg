@@ -16,7 +16,7 @@
 
     <module>
         <name>yarprobotinterface</name>
-        <parameters>--config freeemg_logger.xml --loggerType "(matlab)" --period 0.01</parameters>
+        <parameters>--config freeemg_logger.xml --loggerType "(matlab)" --period 0.01 --experiment-name free_emg_data --experiment-dir C:/tmp/ifeel_data/ </parameters>
     </module>
 
 </application>
