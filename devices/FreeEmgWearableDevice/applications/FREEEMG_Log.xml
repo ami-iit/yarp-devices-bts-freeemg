@@ -12,11 +12,17 @@
     <module>
         <name>yarprobotinterface</name>
         <parameters>--config freeemg.xml --period 0.01 --COM-ports "(26)" --labelList "(1 2 3)" --sensorNames "(r_tib_ant r_gastro_lat r_gastro_med)"</parameters>
+        <description>Run the EMG signals stream</description>
+        <node>localhost</node>
+        <tag>FreeEmgStream</tag>
     </module>
 
     <module>
         <name>yarprobotinterface</name>
         <parameters>--config freeemg_logger.xml --loggerType "(matlab)" --period 0.01 --experiment-name free_emg_data --experiment-dir C:/tmp/ifeel_data/ </parameters>
+        <description>Log EMG signals as matlab file</description>
+        <node>localhost</node>
+        <tag>FreeEmgLog</tag>
     </module>
 
 </application>

@@ -6,16 +6,22 @@
     <version>0.0.1</version>
 
     <authors>
-        <author email="riccardo.grieco@hotmail.com"> Riccardo Grieco </author>
+        <author email="riccardo.grieco@hotmail.com"> Riccardo Grieco</author>
     </authors>
 
     <module>
         <name>yarprobotinterface</name>
         <parameters>--config freeemg_analog.xml --period 0.01 --COM-ports "(26)" --labelList "(1 2 3)" --sensorNames "(r_tib_ant r_gastro_lat r_gastro_med)"</parameters>
+        <description>Run the EMG signal stream as analog ports</description>
+        <node>localhost</node>
+        <tag>FreeEmgAnalogStream</tag>
     </module>
 
     <module>
         <name>yarpscope</name>
         <parameters>--xml freeemg_scope.xml</parameters>
+        <description>Visualized streamed EMG signals</description>
+        <node>localhost</node>
+        <tag>FreeEmgAnalogPlot</tag>
     </module>
 </application>
