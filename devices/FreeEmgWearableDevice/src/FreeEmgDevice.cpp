@@ -559,9 +559,8 @@ bool FreeEmgDevice::FreeEmgDeviceImpl::run()
 
         float outV = 0.0f; //output
 
-        int queueSize = ptrQueueSink->QueueSize(channelIdx);
         __int64 sampleIdx = -1;
-        while(queueSize>=1){
+        while(ptrQueueSink->QueueSize(channelIdx)>=1){
 
             // Get last sample
             SinkExitStatus exitStatus = ptrQueueSink->Dequeue(
