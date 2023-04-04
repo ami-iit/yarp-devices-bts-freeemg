@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.5)
 
-set(GLOBAL_PROJECT_VERSION "0.0.1")
+set(GLOBAL_PROJECT_VERSION "0.0.2")
 
 project(FreeEmg VERSION ${GLOBAL_PROJECT_VERSION}
                     LANGUAGES CXX)
