@@ -11,22 +11,23 @@ Dependencies:
 
 Starting from the directory where you cloned this repo, follow the steps below to install the device:
 
->:warning::warning: This operation required Administrator privileges. Open the terminal with right-click -> Run as administrator :warning::warning:
+>:warning::warning: The installation procedure (and only the installation) requires Administrator privileges. Open the terminal with right-click -> Run as administrator :warning::warning:
 
 ```bat
 :: create the build directory
 mkdir build
 :: enter the directory
 cd build
-:: setup the build
+:: set the variable FREEEMG_SDK_DIR
 :: replace <freeemg_sdk_root_directory> with your specific directory. Beware the spaces in the path! Enclose it in ""
-cmake -G"Visual Studio 17 2022" .. -DFREEEMG_SDK_DIR=<freeemg_sdk_root_directory> -DCMAKE_INSTALL_PREFIX="./install"
+set FREEEMG_SDK_DIR=<freeemg_sdk_root_directory>
+cmake -G"Visual Studio 17 2022" .. -DCMAKE_INSTALL_PREFIX="./install"
 :: build and install
 cmake --build . --config Release --target INSTALL
 ```
 >:warning: Change the Visual Studio version according to your installed version
 
->:warning: You can also set the FREEEMG_SDK_DIR environment variable instead of passing it to the cmake command
+>:warning: You can also set FREEEMG_SDK_DIR as environment variable before running the instructions above
 
 These will install the device and related files in the subdirectory `build/install`.
 
