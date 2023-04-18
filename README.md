@@ -11,7 +11,7 @@ Dependencies:
 
 Starting from the directory where you cloned this repo, follow the steps below to install the device:
 
->:warning::warning: The installation procedure (and only the installation)requires Administrator privileges. Open the terminal with right-click -> Run as administrator :warning::warning:
+>:warning::warning: The installation procedure (and only the installation) requires Administrator privileges. Open the terminal with right-click -> Run as administrator :warning::warning:
 
 ```bat
 :: create the build directory
