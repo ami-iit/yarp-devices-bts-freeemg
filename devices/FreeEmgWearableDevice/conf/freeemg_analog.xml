@@ -16,8 +16,8 @@
             probes labels with logical names for the sensors.
         -->
         <group name="labelToNameGroup">
-            <param extern-name="labelList" name="labelList">(1 2 3)</param>
-            <param extern-name="sensorNames" name="sensorNames">(r_tib_ant r_gastro_lat r_gastro_med)</param>
+            <param extern-name="labelList" name="labelList">(1 2 3 4 5 6)</param>
+            <param extern-name="sensorNames" name="sensorNames">(r_tib_ant r_gastro_lat r_gastro_med l_tib_ant l_gastro_lat l_gastro_med)</param>
         </group>
 
         <!--
@@ -74,6 +74,18 @@
                 <param name="identifier">101460</param>
             </group>
         </group>
+    </device>
+
+    <!-- Stream data as wearable message -->
+    <device type="iwear_wrapper" name="FreeEmgWearableDeviceWrapper">
+        <param extern-name="period" name="period">0.005</param><!--Device update period in seconds-->
+        <param extern-name="dataPortName" name="dataPortName">/FreeEmg/WearableData/data:o</param>
+        <action phase="startup" level="5" type="attach">
+            <paramlist name="networks">
+                <elem name="FreeEmgWearableDeviceWrapperLabel"> FreeEmgWearableDevice </elem>
+            </paramlist>
+        </action>
+        <action phase="shutdown" level="4" type="detach"/>
     </device>
 
     <!-- Stream data as analog ports -->
