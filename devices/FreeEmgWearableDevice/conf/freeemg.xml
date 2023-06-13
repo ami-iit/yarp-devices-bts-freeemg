@@ -36,42 +36,50 @@
             <group name="emg1">
                 <param name="label">1</param>
                 <param name="color">blue</param>
-                <param name="identifier">101459</param>
+                <!-- <param name="identifier">101459</param> -->
+                <param name="identifier">0042E9</param>
             </group>
             <group name="emg2">
                 <param name="label">2</param>
                 <param name="color">blue</param>
-                <param name="identifier">10145A</param>
+                <!-- <param name="identifier">10145A</param> -->
+                <param name="identifier">0042EA</param>
             </group>
             <group name="emg3">
                 <param name="label">3</param>
                 <param name="color">blue</param>
-                <param name="identifier">10145B</param>
+                <!-- <param name="identifier">10145B</param> -->
+                <param name="identifier">0042EB</param>
             </group>
             <group name="emg4">
                 <param name="label">4</param>
                 <param name="color">blue</param>
                 <param name="identifier">10145C</param>
+                <param name="identifier">0042EC</param>
             </group>
             <group name="emg5">
                 <param name="label">5</param>
                 <param name="color">blue</param>
-                <param name="identifier">10145D</param>
+                <!-- <param name="identifier">10145D</param> -->
+                <param name="identifier">0042ED</param>
             </group>
             <group name="emg6">
                 <param name="label">6</param>
                 <param name="color">blue</param>
                 <param name="identifier">"10145E"</param>
+                <param name="identifier">"0042EE"</param>
             </group>
             <group name="emg7">
                 <param name="label">7</param>
                 <param name="color">blue</param>
-                <param name="identifier">10145F</param>
+                <!-- <param name="identifier">10145F</param> -->
+                <param name="identifier">0042EF</param>
             </group>
             <group name="emg8">
                 <param name="label">8</param>
                 <param name="color">blue</param>
-                <param name="identifier">101460</param>
+                <!-- <param name="identifier">101460</param> -->
+                <param name="identifier">0042F0</param>
             </group>
         </group>
     </device>
