@@ -19,7 +19,7 @@
 
     <module>
         <name>yarprobotinterface</name>
-        <parameters>--config freeemg_logger.xml --loggerType "(matlab)" --period 0.01 --experiment-name free_emg_data --experiment-dir C:/tmp/ifeel_data/ </parameters>
+        <parameters>--config freeemg_logger.xml --loggerType "(matlab)" --period 0.01 --experiment-name free_emg_data --path C:/tmp/data/ </parameters>
         <description>Log EMG signals as matlab file</description>
         <node>localhost</node>
         <tag>FreeEmgLog</tag>
